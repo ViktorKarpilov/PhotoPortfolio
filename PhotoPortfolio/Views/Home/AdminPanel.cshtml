@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PhotoPortfolio.Models.PhotoCollectionModel>
+
+@{
+    ViewData["Title"] = "AdminPanel";
+}
+
+<h2>AdminPanel</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@TempData["test"]
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoUrls)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoNames)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <!--<tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhotoUrls)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhotoNames)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+
+                </tr>
+        -->
+            @await Html.PartialAsync("_CardPartial", item);
+        }
+    </tbody>
+    </table>
+    

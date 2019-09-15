@@ -1,0 +1,18 @@
+﻿@model PhotoPortfolio.Models.PhotoCollectionModel
+
+@for (int i = 0; i < Model.Lenth; i++)
+{
+    <div class="card" style="width: 30%;border:double;">
+        <img src="@("/photos/"+Model.GetPhotoName(i))" style="width:100%;" class="card-img-top" alt="@Model.GetPhotoName(i)">
+        <div class="card-body">
+            <h5 class="card-title">@Model.GetPhotoName(i)</h5>
+            <p class="card-text">
+                "@Model.GetPhotoName(i)"
+            </p>
+            <form>
+                <button name="button" value="@(Model.Name+","+Convert.ToString(i))" asp-action="DeleteImage">DeleteImage</button>
+
+            </form>
+        </div>
+    </div>
+    }

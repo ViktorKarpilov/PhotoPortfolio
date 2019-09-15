@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "VideoAdding";
+}
+
+
+<h2>VideoAdding</h2>
+
+<form method="post" enctype="multipart/form-data" asp-controller="VideoPhoto">
+    <i><input type="text" name="CollectionName" placeholder="Enter please collection name" /></i>
+    <i><input type="file" name="Video" /></i>
+    <div class="container"
+         id="VideoDropContainer"
+         style="height:3%;width:3%;">
+        Drop your video here please ^_^
+    </div>
+    <i><input type="text" name="VideoName" value="" /></i>
+    <i><input type="submit" asp-controller="Home" asp-action="VideoPost" /></i>
+
+</form>
+<button type="button" class="btn btn-outline-dark" id="FileSubmitButton">Submit</button>
+
+<h2 id="FilesInformation"></h2>
+
+@section Scripts{
+    <script src="~/js/FileAdding.js"></script>
+    <script src="~/js/VideoAdding.js"></script>
+}
+
+

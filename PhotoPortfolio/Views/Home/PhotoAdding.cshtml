@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "PhotoAdding";
+}
+<!--model PhotoPortfolio.Models.PhotoCollectionModel-->
+
+<h2>PhotoAdding</h2>
+<form method="post" enctype="multipart/form-data" asp-controller="UploadPhoto" >
+    <i><input type="text" name="CollectionName" placeholder="Enter please collection name" /></i>
+    <i><input type="file" name="image" /></i>
+    <i><input type="text" name="IMageName" value="" /></i>
+    <i><input type="submit" asp-controller="Home" asp-action="ImagePost" /></i>
+
+</form>
+
